@@ -11,35 +11,32 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText phoneno, password;
+    EditText phonenoETV, passwordETV;
     Button loginButton,signUp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        phoneno = findViewById(R.id.editTextText);
-        password = findViewById(R.id.editTextPassword);
-
+        phonenoETV = findViewById(R.id.editTextText);
+        passwordETV = findViewById(R.id.editTextPassword);
         loginButton = findViewById(R.id.button2);
+        signUp = findViewById(R.id.button_sign_up);
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(TextUtils.isEmpty(phoneno.getText().toString())) {
-                    phoneno.setError("Please Enter Phone no.");
-                    return;
+                String phone = phonenoETV.getText().toString();
+                String password = passwordETV.getText().toString();
+
+                if(validateInfo(phone, password)) {
+                    Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(intent);
                 }
-                if(TextUtils.isEmpty(password.getText().toString())) {
-                    password.setError("Please enter the Name");
-                    return;
-                }
-                Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                startActivity(intent);
             }
         });
 
-        signUp = findViewById(R.id.button_sign_up);
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,5 +44,29 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private boolean validateInfo(String phone, String password) {
+        if(phone.length() == 0) {
+            phonenoETV.requestFocus();
+            phonenoETV.setError("Field cannot be empty");
+            return false;
+        }
+        else if(phone.length() < 10 || phone.length() > 10 || phone.charAt(0) < 54 ) {
+            phonenoETV.requestFocus();
+            phonenoETV.setError("Invalid phone number");
+            return false;
+        }
+        else if(password.length() == 0) {
+            passwordETV.requestFocus();
+            passwordETV.setError("Field cannot be empty");
+            return false;
+        }
+        else if(password.length() < 6) {
+            passwordETV.requestFocus();
+            passwordETV.setError("Invalid Password");
+            return false;
+        }
+        return true;
     }
 }

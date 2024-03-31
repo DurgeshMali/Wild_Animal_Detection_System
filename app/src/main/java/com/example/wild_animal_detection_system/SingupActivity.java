@@ -4,15 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class SingupActivity extends AppCompatActivity {
     EditText nameETV, passwordETV, phonenoETV;
     Button signUpButton;
+    FirebaseDatabase database;
+    DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,13 +30,19 @@ public class SingupActivity extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                database = FirebaseDatabase.getInstance();
+                reference = database.getReference("Users");
+
                 String name = nameETV.getText().toString();
                 String phone = phonenoETV.getText().toString();
                 String password = passwordETV.getText().toString();
 
                 if(validateInfo(name, phone, password)) {
-                    Toast.makeText(SingupActivity.this, "Singup Successfully", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(SingupActivity.this, HomeActivity.class);
+                    Users users = new Users(name, phone, password);
+                    reference.child(phone).setValue(users);
+
+                    Toast.makeText(SingupActivity.this, "Account created Successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SingupActivity.this, LoginActivity.class);
                     startActivity(intent);
                 }
             }

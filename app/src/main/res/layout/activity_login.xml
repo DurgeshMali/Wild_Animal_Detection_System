@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -59,7 +60,7 @@
             android:hint="Enter your Phone Number"
             android:inputType="phone"
             android:padding="12dp"
-            android:textColor="#707070"
+            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -82,7 +83,7 @@
             android:hint="Enter your Password"
             android:inputType="textPassword"
             android:padding="12dp"
-            android:textColor="#707070"
+            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <Button
@@ -119,18 +120,18 @@
                 android:layout_height="wrap_content"
                 android:text="Don't have an Account ?"
                 android:textColor="#000000"
-                android:textSize="17sp"/>
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/button_sign_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Create Account"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="5dp"
                 android:textColor="@color/green"
                 android:textStyle="bold"
-                android:textSize="17sp"
-                android:background="#00ffffff"/>
+                android:textSize="16sp"
+                android:background="#ffffff"/>
         </LinearLayout>
     </LinearLayout>
 

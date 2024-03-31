@@ -91,12 +91,14 @@ public class LoginActivity extends AppCompatActivity {
                         // pass the data using Intent
                         String nameFromDB = snapshot.child(phone).child("name").getValue(String.class);
                         String phoneNoFromDB = snapshot.child(phone).child("phoneNo").getValue(String.class);
+                        String passwordNoFromDB = snapshot.child(phone).child("password").getValue(String.class);
 
                         Toast.makeText(LoginActivity.this, "Login Successfully ", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
 
                         intent.putExtra("userName", nameFromDB);
                         intent.putExtra("userPhone", phoneNoFromDB);
+                        intent.putExtra("userPassword", passwordNoFromDB);
                         startActivity(intent);
                     }
                     else {

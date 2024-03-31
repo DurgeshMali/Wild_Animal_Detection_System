@@ -39,6 +39,8 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
+            android:background="@color/white"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
@@ -62,6 +64,7 @@
                     android:text="My Profile"
                     android:textAlignment="center"
                     android:textSize="18sp"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -75,6 +78,8 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
+            android:background="@color/white"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
@@ -97,6 +102,7 @@
                     android:layout_height="wrap_content"
                     android:text="Language"
                     android:textAlignment="center"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -111,6 +117,8 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
+            android:background="@color/white"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
@@ -132,6 +140,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Live Feed"
+                    android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -147,6 +156,8 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
+            android:background="@color/white"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
@@ -168,6 +179,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Customize \nCamera"
+                    android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -184,6 +196,8 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
+            android:background="@color/white"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
@@ -205,6 +219,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Contact Us"
+                    android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -220,6 +235,8 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
+            android:background="@color/white"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
@@ -241,6 +258,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Help"
+                    android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />

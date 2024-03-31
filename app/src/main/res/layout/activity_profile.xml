@@ -24,7 +24,7 @@
                     android:id="@+id/view"
                     android:layout_width="wrap_content"
                     android:layout_height="360dp"
-                    android:background="@drawable/top_background"
+                    android:background="@drawable/top_background_profile_page"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

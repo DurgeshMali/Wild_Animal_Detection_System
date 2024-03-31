@@ -25,7 +25,8 @@
             android:exported="false" />
         <activity
             android:name=".LiveFeedActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".LanguageActivity"
             android:exported="false" />

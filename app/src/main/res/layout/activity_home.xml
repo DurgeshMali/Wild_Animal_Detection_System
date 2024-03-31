@@ -31,6 +31,7 @@
         android:rowCount="3">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/CardView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"
@@ -50,6 +51,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/myProfile_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/baseline_account_box_24" />
@@ -65,6 +67,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/CardView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"
@@ -89,16 +92,18 @@
                     android:src="@drawable/language" />
 
                 <TextView
+                    android:id="@+id/language_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Language"
-                    android:textSize="18sp"
                     android:textAlignment="center"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/CardView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
@@ -118,6 +123,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/liveFeed_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/baseline_videocam_24" />
@@ -133,6 +139,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/CardView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
@@ -152,6 +159,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/customize_camera_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/baseline_video_settings_24" />
@@ -168,6 +176,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/CardView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="2"
@@ -187,6 +196,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/contactUs_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/baseline_perm_phone_msg_24" />
@@ -202,6 +212,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/CardView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="2"
@@ -221,6 +232,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/help_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/baseline_help_center_24" />

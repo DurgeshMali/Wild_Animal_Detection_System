@@ -15,6 +15,15 @@
         android:theme="@style/Theme.Wild_Animal_Detection_System"
         tools:targetApi="31">
         <activity
+            android:name=".ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VerifyOTPActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".HelpActivity"
             android:exported="false" />
         <activity
@@ -26,7 +35,7 @@
         <activity
             android:name=".LiveFeedActivity"
             android:exported="false"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LanguageActivity"
             android:exported="false" />

@@ -26,7 +26,7 @@
         app:srcCompat="@drawable/bottom_white" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Protecting Farms \nwith spy Cam"
@@ -44,8 +44,8 @@
         android:text="Watch and protect your \nfarm with our App."
         android:textSize="20sp"
         android:textColor="#6b6b6b"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/text_view"
+        app:layout_constraintTop_toBottomOf="@+id/text_view" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"

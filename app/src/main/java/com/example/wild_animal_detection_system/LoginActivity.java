@@ -24,7 +24,7 @@ import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
     EditText phonenoETV, passwordETV;
-    Button loginButton;
+    Button loginButton,forgotPassword;
     TextView signupButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordETV = findViewById(R.id.editTextPassword);
         loginButton = findViewById(R.id.button2);
         signupButton = findViewById(R.id.button_sign_up);
+        forgotPassword = findViewById(R.id.button_forgot_password);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +53,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, SingupActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
                 startActivity(intent);
             }
         });

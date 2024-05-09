@@ -38,6 +38,8 @@ public class EditProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (isNameChanged() || isPasswordChanged() || isPhoneChanged()){
                     Toast.makeText(EditProfileActivity.this, "Data updated", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(EditProfileActivity.this, ProfileActivity.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(EditProfileActivity.this, "No Changes Found", Toast.LENGTH_SHORT).show();
                 }

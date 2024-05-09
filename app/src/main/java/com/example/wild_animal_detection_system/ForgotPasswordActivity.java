@@ -110,7 +110,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                     );
                 }
                 else {
-                    Toast.makeText(ForgotPasswordActivity.this, "User does not exist, Please create an Account.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ForgotPasswordActivity.this, "User does not exists, Please create an Account.", Toast.LENGTH_SHORT).show();
                 }
             }
 

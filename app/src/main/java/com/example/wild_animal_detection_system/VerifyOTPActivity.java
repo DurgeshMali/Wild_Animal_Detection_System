@@ -85,8 +85,8 @@ public class VerifyOTPActivity extends AppCompatActivity {
 
                                         if(task.isSuccessful()) {
                                             Intent intent = new Intent(VerifyOTPActivity.this, ResetPasswordActivity.class);
-                                            intent.putExtra("mobile", mobileno);
                                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                            intent.putExtra("mobile", mobileno);
                                             startActivity(intent);
                                         } else {
                                             Toast.makeText(VerifyOTPActivity.this, "Invalid OTP", Toast.LENGTH_SHORT).show();

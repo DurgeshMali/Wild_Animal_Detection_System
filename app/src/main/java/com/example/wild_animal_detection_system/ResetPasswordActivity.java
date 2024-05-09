@@ -2,14 +2,20 @@ package com.example.wild_animal_detection_system;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ResetPasswordActivity extends AppCompatActivity {
     EditText newPassword, confirmPassword;
+    Button resetPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +24,47 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
         newPassword = findViewById(R.id.editTextText);
         confirmPassword = findViewById(R.id.editTextPassword);
-        String mobileno = getIntent().getStringExtra("mobile").trim();
+        resetPassword = findViewById(R.id.button2);
+        String mobileno = getIntent().getStringExtra("mobile");
 
-        FirebaseFirestore.getInstance().collection("Users").document(mobileno).update("password",newPassword);
+        resetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String newPass = newPassword.getText().toString().trim();
+                String confPass = confirmPassword.getText().toString().trim();
+
+                if(validPassword(newPass,confPass)) {
+                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+                    reference.child(mobileno).child("password").setValue(newPass);
+                    Toast.makeText(ResetPasswordActivity.this,"Password Reset Successfully.",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ResetPasswordActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+    }
+
+    public boolean validPassword(String newPass, String confPass) {
+        if(newPass.length() == 0) {
+            newPassword.requestFocus();
+            newPassword.setError("Field cannot be empty");
+            return false;
+        }
+        else if(newPass.length() < 6) {
+            newPassword.requestFocus();
+            newPassword.setError("Minimum 6 character required");
+            return false;
+        }
+        else if(confirmPassword.length() == 0) {
+            confirmPassword.requestFocus();
+            confirmPassword.setError("Field cannot be empty");
+            return false;
+        }
+        else if(!newPass.equals(confPass)) {
+            confirmPassword.requestFocus();
+            confirmPassword.setError("Confirm Password and New Password should be same");
+            return false;
+        }
+        return true;
     }
 }

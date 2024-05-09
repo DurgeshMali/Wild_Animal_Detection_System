@@ -49,8 +49,8 @@ public class HomeActivity extends AppCompatActivity {
         language.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, LanguageActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(HomeActivity.this, LanguageActivity.class);
+//                startActivity(intent);
             }
         });
 

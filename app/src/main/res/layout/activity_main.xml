@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="485dp"
-        android:layout_height="560dp"
+        android:layout_width="445dp"
+        android:layout_height="530dp"
         android:layout_marginTop="9dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +20,7 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="408dp"
-        android:layout_height="339dp"
+        android:layout_height="335dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,11 +30,12 @@
         android:id="@+id/text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/protecting_farms_nwith_spy_cam"
-        android:layout_marginStart="32dp"
         android:textColor="#000000"
-        android:textSize="35sp"
+        android:textSize="30sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView1" />
 
@@ -42,21 +44,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/watch_and_protect_your_nfarm_with_our_app"
-        android:textSize="20sp"
         android:textColor="#6b6b6b"
-        app:layout_constraintStart_toStartOf="@+id/text_view"
+        android:textSize="18sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@id/text_view"
+        app:layout_constraintStart_toStartOf="@id/text_view"
         app:layout_constraintTop_toBottomOf="@+id/text_view" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
-        android:layout_width="200dp"
+        android:layout_width="170dp"
         android:layout_height="70dp"
-        android:textAlignment="center"
+        android:gravity="center"
         android:textColor="#ffffff"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:text="@string/get_started"
         android:background="@drawable/background_button_intro"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_3"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:text="@string/language"
+        android:background="@drawable/background_button_intro_1"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

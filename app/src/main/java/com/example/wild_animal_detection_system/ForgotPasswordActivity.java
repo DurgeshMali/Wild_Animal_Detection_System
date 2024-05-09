@@ -21,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
@@ -35,7 +34,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forgot_password);
 
         phone_No = findViewById(R.id.editTextText);
-        getOtpButton = findViewById(R.id.button2);
+        getOtpButton = findViewById(R.id.button_3);
         progressBar = findViewById(R.id.progress_circular);
 
         getOtpButton.setOnClickListener(new View.OnClickListener() {

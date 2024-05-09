@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="OTP VERIFICATION"
+            android:text="@string/otp_verification"
             android:textColor="@color/green"
             android:textSize="35sp"
             android:textStyle="bold" />
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Please Enter the OTP set to you"
+            android:text="@string/please_enter_the_otp_set_to_you"
             android:textColor="#777474"
             android:textSize="18sp" />
 
@@ -162,7 +162,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Didn't receive the OTP"
+                android:text="@string/didn_t_receive_the_otp"
                 android:textColor="#777474"
                 android:textSize="16sp"/>
 
@@ -171,7 +171,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Resend OTP Again"
+                android:text="@string/resend_otp_again"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
@@ -182,13 +182,13 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button2"
+                android:id="@+id/button_3"
                 style="@android:style/Widget.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
                 android:background="@drawable/button_background"
-                android:text="Verify OTP"
+                android:text="@string/verify_otp"
                 android:textColor="#ffffff"
                 android:textSize="25sp"
                 android:textStyle="bold" />

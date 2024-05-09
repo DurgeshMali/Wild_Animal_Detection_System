@@ -25,7 +25,7 @@ public class SingupActivity extends AppCompatActivity {
         nameETV = findViewById(R.id.editTextText3);
         phonenoETV = findViewById(R.id.editTextText2);
         passwordETV = findViewById(R.id.editTextText);
-        signUpButton = findViewById(R.id.button2);
+        signUpButton = findViewById(R.id.button_3);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override

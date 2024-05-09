@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,8 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Objects;
-
 public class LoginActivity extends AppCompatActivity {
     EditText phonenoETV, passwordETV;
     Button loginButton,forgotPassword;
@@ -33,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
 
         phonenoETV = findViewById(R.id.editTextText);
         passwordETV = findViewById(R.id.editTextPassword);
-        loginButton = findViewById(R.id.button2);
+        loginButton = findViewById(R.id.button_3);
         signupButton = findViewById(R.id.button_sign_up);
         forgotPassword = findViewById(R.id.button_forgot_password);
 

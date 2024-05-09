@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ResetPasswordActivity extends AppCompatActivity {
     EditText newPassword, confirmPassword;
@@ -24,7 +23,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
         newPassword = findViewById(R.id.editTextText);
         confirmPassword = findViewById(R.id.editTextPassword);
-        resetPassword = findViewById(R.id.button2);
+        resetPassword = findViewById(R.id.button_3);
         String mobileno = getIntent().getStringExtra("mobile");
 
         resetPassword.setOnClickListener(new View.OnClickListener() {

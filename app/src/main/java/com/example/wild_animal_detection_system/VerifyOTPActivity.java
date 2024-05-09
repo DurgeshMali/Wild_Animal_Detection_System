@@ -45,7 +45,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
         otpno5 = findViewById(R.id.edit_text5);
         otpno6 = findViewById(R.id.edit_text6);
         mobilenoTV = findViewById(R.id.textView16);
-        verifyOTPButton = findViewById(R.id.button2);
+        verifyOTPButton = findViewById(R.id.button_3);
         resendOTP = findViewById(R.id.text_view);
 
         progressBar = findViewById(R.id.progress_circular);

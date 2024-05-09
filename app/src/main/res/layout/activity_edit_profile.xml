@@ -143,37 +143,6 @@
                         android:layout_marginBottom="6dp"
                         android:background="#d9d9d9" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/textView13"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Phone No :-"
-                            android:textColor="#0F7015"
-                            android:textSize="22sp"
-                            android:textStyle="bold" />
-
-                        <EditText
-                            android:id="@+id/textView14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:hint="7485967485"
-                            android:textColorHint="#5b5b5b"
-                            android:minHeight="48dp"
-                            android:padding="12dp"
-                            android:background="@null"
-                            android:textAlignment="textEnd"
-                            android:textColor="@color/black"
-                            android:textSize="18sp" />
-                    </LinearLayout>
-
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>

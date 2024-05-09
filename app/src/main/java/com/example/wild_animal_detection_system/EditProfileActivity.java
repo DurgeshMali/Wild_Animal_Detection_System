@@ -13,7 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class EditProfileActivity extends AppCompatActivity {
-    EditText editName, editPassword, editPhone;
+    EditText editName, editPassword;
     String userName, userPassword, userPhone;
     Button editBTN;
     DatabaseReference reference;
@@ -28,7 +28,6 @@ public class EditProfileActivity extends AppCompatActivity {
 
         editName = findViewById(R.id.textView11);
         editPassword = findViewById(R.id.textView12);
-        editPhone = findViewById(R.id.textView14);
         editBTN = findViewById(R.id.button3);
 
         showData();
@@ -36,9 +35,12 @@ public class EditProfileActivity extends AppCompatActivity {
         editBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isNameChanged() || isPasswordChanged() || isPhoneChanged()){
+                if ((isNameChanged() && isPasswordChanged()) || isNameChanged() || isPasswordChanged()){
                     Toast.makeText(EditProfileActivity.this, "Data updated", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(EditProfileActivity.this, ProfileActivity.class);
+                    Intent intent = new Intent(EditProfileActivity.this, HomeActivity.class);
+                    intent.putExtra("userName", userName);
+                    intent.putExtra("userPassword", userPassword);
+                    intent.putExtra("userPhone", userPhone);
                     startActivity(intent);
                 } else {
                     Toast.makeText(EditProfileActivity.this, "No Changes Found", Toast.LENGTH_SHORT).show();
@@ -51,15 +53,6 @@ public class EditProfileActivity extends AppCompatActivity {
         if (!userName.equals(editName.getText().toString())){
             reference.child(userPhone).child("name").setValue(editName.getText().toString());
             userName = editName.getText().toString();
-            return true;
-        } else {
-            return false;
-        }
-    }
-    private boolean isPhoneChanged() {
-        if (!userPhone.equals(editPhone.getText().toString())){
-            reference.child(userPhone).child("phoneNo").setValue(editPhone.getText().toString());
-            userPhone = editPhone.getText().toString();
             return true;
         } else {
             return false;
@@ -84,6 +77,5 @@ public class EditProfileActivity extends AppCompatActivity {
 
         editName.setText(userName);
         editPassword.setText(userPassword);
-        editPhone.setText(userPhone);
     }
 }

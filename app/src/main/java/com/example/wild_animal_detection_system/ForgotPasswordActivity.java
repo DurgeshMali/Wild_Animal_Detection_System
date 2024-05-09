@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
@@ -83,6 +84,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                                 public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
                                     progressBar.setVisibility(View.GONE);
                                     getOtpButton.setVisibility(View.VISIBLE);
+                                    signInWithCredential(phoneAuthCredential);
                                 }
 
                                 @Override
@@ -95,6 +97,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
                                 @Override
                                 public void onCodeSent(@NonNull String backendOTP, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                                    super.onCodeSent(backendOTP, forceResendingToken);
                                     progressBar.setVisibility(View.GONE);
                                     getOtpButton.setVisibility(View.VISIBLE);
                                     Toast.makeText(ForgotPasswordActivity.this, "please verify the OTP", Toast.LENGTH_SHORT).show();
@@ -116,5 +119,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void signInWithCredential(PhoneAuthCredential phoneAuthCredential) {
     }
 }

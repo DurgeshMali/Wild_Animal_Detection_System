@@ -54,7 +54,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Edit Profile"
+                            android:text="@string/edit_profile"
                             android:textColor="#0F7015"
                             android:textSize="35sp"
                             android:textStyle="bold"
@@ -72,7 +72,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Name :-"
+                            android:text="@string/name"
                             android:textColor="#0F7015"
                             android:textSize="22sp"
                             android:textStyle="bold" />
@@ -83,7 +83,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@null"
-                            android:hint="User Name"
+                            android:hint="@string/user_name"
                             android:minHeight="48dp"
                             android:padding="12dp"
                             android:textAlignment="textEnd"
@@ -113,7 +113,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Password :-"
+                            android:text="@string/password"
                             android:textColor="#0F7015"
                             android:textSize="22sp"
                             android:textStyle="bold" />
@@ -123,7 +123,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:hint="User password"
+                            android:hint="@string/user_password"
                             android:textColorHint="#5b5b5b"
                             android:minHeight="48dp"
                             android:padding="12dp"
@@ -133,16 +133,6 @@
                             android:textSize="18sp" />
                     </LinearLayout>
 
-                    <View
-                        android:id="@+id/view3"
-                        android:layout_width="match_parent"
-                        android:layout_height="1.5dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="6dp"
-                        android:background="#d9d9d9" />
-
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -151,7 +141,7 @@
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="Edit"
+                android:text="@string/edit"
                 android:textColor="#ffffff"
                 android:textSize="22sp"
                 android:textStyle="bold"

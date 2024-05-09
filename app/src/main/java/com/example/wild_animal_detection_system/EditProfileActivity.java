@@ -36,14 +36,14 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if ((isNameChanged() && isPasswordChanged()) || isNameChanged() || isPasswordChanged()){
-                    Toast.makeText(EditProfileActivity.this, "Data updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditProfileActivity.this, getString(R.string.data_updated), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(EditProfileActivity.this, HomeActivity.class);
                     intent.putExtra("userName", userName);
                     intent.putExtra("userPassword", userPassword);
                     intent.putExtra("userPhone", userPhone);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(EditProfileActivity.this, "No Changes Found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditProfileActivity.this, getString(R.string.no_changes_found), Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -89,12 +89,12 @@ public class VerifyOTPActivity extends AppCompatActivity {
                                             intent.putExtra("mobile", mobileno);
                                             startActivity(intent);
                                         } else {
-                                            Toast.makeText(VerifyOTPActivity.this, "Invalid OTP", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(VerifyOTPActivity.this, getString(R.string.invalid_otp), Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 });
                     } else {
-                        Toast.makeText(VerifyOTPActivity.this, "Please check Internet Connection.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(VerifyOTPActivity.this, getString(R.string.please_check_internet_connection), Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -226,7 +226,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
         if(!no1.isEmpty() && !no2.isEmpty() && !no3.isEmpty() && !no4.isEmpty() && !no5.isEmpty() && !no6.isEmpty()) {
             return true;
         }
-        Toast.makeText(VerifyOTPActivity.this, "Please enter all numbers.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(VerifyOTPActivity.this, getString(R.string.please_enter_all_numbers), Toast.LENGTH_SHORT).show();
         return false;
     }
 }

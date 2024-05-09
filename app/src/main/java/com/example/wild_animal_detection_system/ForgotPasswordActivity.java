@@ -53,12 +53,12 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     public boolean validateInfo(String phoneno) {
         if(phoneno.length() == 0) {
             phone_No.requestFocus();
-            phone_No.setError("Field cannot be empty");
+            phone_No.setError(getString(R.string.field_cannot_be_empty));
             return false;
         }
         else if(phoneno.length() < 10 || phoneno.length() > 10 || phoneno.charAt(0) < 54 ) {
             phone_No.requestFocus();
-            phone_No.setError("Invalid phone number");
+            phone_No.setError(getString(R.string.invalid_phone_number));
             return false;
         }
         return true;
@@ -92,7 +92,6 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                                     progressBar.setVisibility(View.GONE);
                                     getOtpButton.setVisibility(View.VISIBLE);
                                     Toast.makeText(ForgotPasswordActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
-                                    System.out.println(e.getMessage());
                                 }
 
                                 @Override
@@ -100,7 +99,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                                     super.onCodeSent(backendOTP, forceResendingToken);
                                     progressBar.setVisibility(View.GONE);
                                     getOtpButton.setVisibility(View.VISIBLE);
-                                    Toast.makeText(ForgotPasswordActivity.this, "please verify the OTP", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ForgotPasswordActivity.this, getString(R.string.please_verify_the_otp), Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(ForgotPasswordActivity.this, VerifyOTPActivity.class);
                                     intent.putExtra("mobile", phone);
                                     intent.putExtra("backendOTP",backendOTP);
@@ -110,7 +109,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                     );
                 }
                 else {
-                    Toast.makeText(ForgotPasswordActivity.this, "User does not exists, Please create an Account.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ForgotPasswordActivity.this, getString(R.string.user_does_not_exists_please_create_an_account), Toast.LENGTH_SHORT).show();
                 }
             }
 

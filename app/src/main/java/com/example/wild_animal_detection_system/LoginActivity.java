@@ -69,12 +69,12 @@ public class LoginActivity extends AppCompatActivity {
     public boolean validateInfo(String phone, String password) {
         if(phone.length() == 0) {
             phonenoETV.requestFocus();
-            phonenoETV.setError("Field cannot be empty");
+            phonenoETV.setError(getString(R.string.field_cannot_be_empty));
             return false;
         }
         else if(password.length() == 0) {
             passwordETV.requestFocus();
-            passwordETV.setError("Field cannot be empty");
+            passwordETV.setError(getString(R.string.field_cannot_be_empty));
             return false;
         }
         return true;
@@ -102,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                         String phoneNoFromDB = snapshot.child(phone).child("phoneNo").getValue(String.class);
                         String passwordNoFromDB = snapshot.child(phone).child("password").getValue(String.class);
 
-                        Toast.makeText(LoginActivity.this, "Login Successfully ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, getString(R.string.login_successfully), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
 
                         intent.putExtra("userName", nameFromDB);
@@ -112,12 +112,12 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     else {
                         passwordETV.requestFocus();
-                        passwordETV.setError("Invalid Password");
+                        passwordETV.setError(getString(R.string.invalid_password));
                     }
                 }
                 else {
                     phonenoETV.requestFocus();
-                    phonenoETV.setError("User does not exist");
+                    phonenoETV.setError(getString(R.string.user_does_not_exist));
                 }
             }
 

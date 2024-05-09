@@ -36,7 +36,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                 if(validPassword(newPass,confPass)) {
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
                     reference.child(mobileno).child("password").setValue(newPass);
-                    Toast.makeText(ResetPasswordActivity.this,"Password Reset Successfully.",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResetPasswordActivity.this, getString(R.string.password_reset_successfully),Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(ResetPasswordActivity.this, LoginActivity.class);
                     startActivity(intent);
                 }
@@ -47,22 +47,22 @@ public class ResetPasswordActivity extends AppCompatActivity {
     public boolean validPassword(String newPass, String confPass) {
         if(newPass.length() == 0) {
             newPassword.requestFocus();
-            newPassword.setError("Field cannot be empty");
+            newPassword.setError(getString(R.string.field_cannot_be_empty));
             return false;
         }
         else if(newPass.length() < 6) {
             newPassword.requestFocus();
-            newPassword.setError("Minimum 6 character required");
+            newPassword.setError(getString(R.string.minimum_6_character_required));
             return false;
         }
         else if(confirmPassword.length() == 0) {
             confirmPassword.requestFocus();
-            confirmPassword.setError("Field cannot be empty");
+            confirmPassword.setError(getString(R.string.field_cannot_be_empty));
             return false;
         }
         else if(!newPass.equals(confPass)) {
             confirmPassword.requestFocus();
-            confirmPassword.setError("Confirm Password and New Password should be same");
+            confirmPassword.setError(getString(R.string.confirm_password_and_new_password_should_be_same));
             return false;
         }
         return true;

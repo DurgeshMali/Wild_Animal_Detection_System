@@ -17,7 +17,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="12dp"
-        android:text="Hello, User Name"
+        android:text="@string/hello_user_name"
         android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="#ffffff" />
@@ -61,7 +61,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="My Profile"
+                    android:text="@string/my_profile"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textColor="@color/black"
@@ -100,7 +100,7 @@
                     android:id="@+id/language_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Language"
+                    android:text="@string/language"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="18sp"
@@ -139,7 +139,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Live Feed"
+                    android:text="@string/live_feed"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="18sp"
@@ -178,7 +178,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Customize \nCamera"
+                    android:text="@string/customize_ncamera"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="18sp"
@@ -218,7 +218,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Contact Us"
+                    android:text="@string/contact_us"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="18sp"
@@ -257,7 +257,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Help"
+                    android:text="@string/help"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="18sp"

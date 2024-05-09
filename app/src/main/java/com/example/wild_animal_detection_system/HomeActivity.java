@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
         String passwordUser = intent.getStringExtra("userPassword");
         String phoneUser = intent.getStringExtra("userPhone");
 
-        userName.setText("Welcome "+nameUser);
+        userName.setText(getString(R.string.welcome)+nameUser);
 
         myProfile = findViewById(R.id.CardView1);
         language = findViewById(R.id.CardView2);

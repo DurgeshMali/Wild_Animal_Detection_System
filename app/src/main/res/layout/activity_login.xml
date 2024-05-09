@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:text="Hi, \nPlease Login"
+        android:text="@string/hi_nplease_login"
         android:textColor="#ffffff"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -45,7 +45,7 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Phone no."
+            android:text="@string/phone_no"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -57,7 +57,7 @@
             android:layout_marginTop="12dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
-            android:hint="Enter your Phone Number"
+            android:hint="@string/enter_your_phone_number"
             android:textColorHint="#736E6E"
             android:inputType="phone"
             android:padding="12dp"
@@ -69,7 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Password"
+            android:text="@string/password_1"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -81,7 +81,7 @@
             android:layout_marginTop="12dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
-            android:hint="Enter your Password"
+            android:hint="@string/enter_your_password"
             android:textColorHint="#736E6E"
             android:inputType="textPassword"
             android:padding="12dp"
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:background="#00ffffff"
-            android:text="Forgot Password ?"
+            android:text="@string/forgot_password"
             android:textColor="@color/green"
             android:textSize="17sp"
             android:textStyle="bold" />
@@ -106,7 +106,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/button_background"
-            android:text="Login"
+            android:text="@string/login"
             android:textColor="#ffffff"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -120,7 +120,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Don't have an Account ?"
+                android:text="@string/don_t_have_an_account"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
@@ -130,7 +130,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
                 android:background="#ffffff"
-                android:text="Create Account"
+                android:text="@string/create_account"
                 android:textColor="@color/green"
                 android:textSize="16sp"
                 android:textStyle="bold" />

@@ -41,7 +41,7 @@ public class SingupActivity extends AppCompatActivity {
                     Users users = new Users(name, phone, password);
                     reference.child(phone).setValue(users);
 
-                    Toast.makeText(SingupActivity.this, "Account created Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SingupActivity.this, getString(R.string.account_created_successfully), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SingupActivity.this, LoginActivity.class);
                     startActivity(intent);
                 }
@@ -52,32 +52,32 @@ public class SingupActivity extends AppCompatActivity {
     private boolean validateInfo(String name, String phone, String password) {
         if(name.length() == 0) {
             nameETV.requestFocus();
-            nameETV.setError("Field cannot be empty");
+            nameETV.setError(getString(R.string.field_cannot_be_empty));
             return false;
         }
         else if(!name.matches("[a-zA-Z]+")) {
             nameETV.requestFocus();
-            nameETV.setError("Enter only Alphabates");
+            nameETV.setError(getString(R.string.enter_only_alphabates));
             return false;
         }
         else if(phone.length() == 0) {
             phonenoETV.requestFocus();
-            phonenoETV.setError("Field cannot be empty");
+            phonenoETV.setError(getString(R.string.field_cannot_be_empty));
             return false;
         }
         else if(phone.length() < 10 || phone.length() > 10 || phone.charAt(0) < 54 ) {
             phonenoETV.requestFocus();
-            phonenoETV.setError("Invalid phone number");
+            phonenoETV.setError(getString(R.string.invalid_phone_number));
             return false;
         }
         else if(password.length() == 0) {
             passwordETV.requestFocus();
-            passwordETV.setError("Field cannot be empty");
+            passwordETV.setError(getString(R.string.field_cannot_be_empty));
             return false;
         }
         else if(password.length() < 6) {
             passwordETV.requestFocus();
-            passwordETV.setError("Minimum 6 character required");
+            passwordETV.setError(getString(R.string.minimum_6_character_required));
             return false;
         }
         return true;

@@ -119,6 +119,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
 
                             @Override
                             public void onCodeSent(@NonNull String newbackendOTP, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                                super.onCodeSent(newbackendOTP, forceResendingToken);
                                 getOTPBackend = newbackendOTP;
                             }
                         }

@@ -6,8 +6,6 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
@@ -46,13 +44,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        language.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Intent intent = new Intent(HomeActivity.this, LanguageActivity.class);
-//                startActivity(intent);
-            }
-        });
+//        language.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                Intent intent = new Intent(HomeActivity.this, LanguageActivity.class);
+////                startActivity(intent);
+//            }
+//        });
 
         liveFeed.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +63,7 @@ public class HomeActivity extends AppCompatActivity {
         customizeCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, CusomizeCameraActivity.class);
+                Intent intent = new Intent(HomeActivity.this, CustomizeCameraActivity.class);
                 startActivity(intent);
             }
         });

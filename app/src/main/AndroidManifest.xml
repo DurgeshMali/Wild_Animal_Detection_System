@@ -33,7 +33,7 @@
             android:name=".ContactUsActivity"
             android:exported="false" />
         <activity
-            android:name=".CusomizeCameraActivity"
+            android:name=".CustomizeCameraActivity"
             android:exported="false" />
         <activity
             android:name=".LiveFeedActivity"

@@ -2,6 +2,7 @@ package com.example.wild_animal_detection_system;
 
 public class Users {
     String name, phoneNo, password;
+    String camName, camIP;
 
     public Users() {
     }

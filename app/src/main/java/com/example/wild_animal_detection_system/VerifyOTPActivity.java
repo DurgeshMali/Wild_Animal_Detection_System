@@ -38,7 +38,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_otp);
 
-        otpno1 = findViewById(R.id.edit_text1);
+        otpno1 = findViewById(R.id.editText);
         otpno2 = findViewById(R.id.edit_text2);
         otpno3 = findViewById(R.id.edit_text3);
         otpno4 = findViewById(R.id.edit_text4);

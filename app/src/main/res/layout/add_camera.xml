@@ -1,103 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@color/white">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/white_background"
-        android:elevation="20dp"
         android:orientation="vertical"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_goneMarginBottom="24dp">
+        android:layout_margin="16dp"
+        android:background="@drawable/white_background">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Add Camera Information"
-                android:textColor="#0F7015"
-                android:gravity="center"
-                android:textSize="35sp"
-                android:textStyle="bold"
-                android:layout_gravity="center"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
-                android:hint="Give the Camera Name"
-                android:minHeight="48dp"
-                android:padding="12dp"
-                android:textColor="@color/black"
-                android:textColorHint="#5b5b5b"
-                android:textSize="18sp" />
-
-            <View
-                android:id="@+id/view1"
-                android:layout_width="match_parent"
-                android:layout_height="1.5dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="#756B6B" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:orientation="vertical">
+            android:text="Add Camera Information"
+            android:textColor="#0F7015"
+            android:gravity="center"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
 
-            <EditText
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
-                android:hint="Paste your Camera's Link here"
-                android:minHeight="48dp"
-                android:padding="12dp"
-                android:textColor="@color/black"
-                android:textColorHint="#5b5b5b"
-                android:textSize="18sp" />
+        <EditText
+            android:id="@+id/cam_Name"
+            android:hint="Give the Camera Name"
+            android:textColor="@color/black"
+            android:background="@drawable/white_background"
+            android:textSize="18sp"
+            android:padding="15dp"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-            <View
-                android:id="@+id/view2"
-                android:layout_width="match_parent"
-                android:layout_height="1.5dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="#756B6B" />
-
-        </LinearLayout>
+        <EditText
+            android:id="@+id/cam_IP"
+            android:hint="Paste your camera Link here"
+            android:textColor="@color/black"
+            android:background="@drawable/white_background"
+            android:padding="15dp"
+            android:textSize="18sp"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

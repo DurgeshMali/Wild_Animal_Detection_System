@@ -1,82 +1,71 @@
 package com.example.wild_animal_detection_system;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.view.LayoutInflater;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
+import android.widget.Toast;
+import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+
 public class CustomizeCameraActivity extends AppCompatActivity {
-    Button  deleteBTN;
-    FloatingActionButton addCameraBTN;
-    AlertDialog dialog;
-    LinearLayout layout;
-    EditText camName, camIP;
-    TextView cam_name;
+    private FloatingActionButton addsBtn;
+    private RecyclerView recv;
+    private ArrayList<Users> camList;
+    private CameraAdapter cameraAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customize_camera);
 
-        addCameraBTN = findViewById(R.id.addingBtn);
-        layout = findViewById(R.id.container1);
+        // set List
+        camList = new ArrayList<>();
 
-        buildDialog();
+        // set find Id
+        addsBtn = findViewById(R.id.addingBtn);
+        recv = findViewById(R.id.mRecycler);
 
-        addCameraBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.show();
-            }
-        });
+        // set Adapter
+        cameraAdapter = new CameraAdapter(this, camList);
+
+        // set Recycler view Adapter
+        recv.setLayoutManager(new LinearLayoutManager(this));
+        recv.setAdapter(cameraAdapter);
+
+        // set Dialog
+        addsBtn.setOnClickListener(v -> addInfo());
     }
 
-    private void buildDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View view = getLayoutInflater().inflate(R.layout.add_camera,null);
+    private void addInfo() {
+        LayoutInflater inflter = LayoutInflater.from(this);
+        android.view.View v = inflter.inflate(R.layout.add_camera, null);
 
-        camName = view.findViewById(R.id.textView11);
-        camIP = view.findViewById(R.id.textView1);
+        // set view
+        EditText camName = v.findViewById(R.id.cam_Name);
+        EditText camIP = v.findViewById(R.id.cam_IP);
 
-        builder.setView(view);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                addCard(camName.getText().toString());
-            }
-        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+        AlertDialog.Builder addDialog = new AlertDialog.Builder(this);
 
-            }
+        addDialog.setView(v);
+        addDialog.setPositiveButton("Ok", (dialog, which) -> {
+            String camnames = camName.getText().toString();
+            String camip = camIP.getText().toString();
+            camList.add(new Users("CamName: " + camnames, "CamIP. : " + camip));
+            cameraAdapter.notifyDataSetChanged();
+            Toast.makeText(this, "Adding Camera Information Success", Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
         });
-
-        dialog = builder.create();
-
-    }
-
-    private void addCard(String name) {
-        View view = getLayoutInflater().inflate(R.layout.camera, null);
-
-        cam_name = view.findViewById(R.id.camName);
-        deleteBTN = view.findViewById(R.id.deleteCamera);
-
-        cam_name.setText(name);
-
-        deleteBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                layout.removeView((View) view.getParent());
-            }
+        addDialog.setNegativeButton("Cancel", (dialog, which) -> {
+            dialog.dismiss();
+            Toast.makeText(this, "Cancel", Toast.LENGTH_SHORT).show();
         });
-        layout.addView(view);
+        addDialog.create();
+        addDialog.show();
     }
 }
+

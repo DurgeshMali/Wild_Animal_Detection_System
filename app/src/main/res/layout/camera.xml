@@ -6,7 +6,8 @@
     app:cardCornerRadius="10dp"
     app:cardElevation="10dp"
     app:cardMaxElevation="5dp"
-    android:layout_margin="15dp">
+    android:layout_margin="15dp"
+    android:background="@color/white">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -34,8 +35,8 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/deleteCamera"
-            android:src="@drawable/baseline_delete_24"
+            android:id="@+id/menu"
+            android:src="@drawable/baseline_more_horiz_24"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:layout_width="40dp"

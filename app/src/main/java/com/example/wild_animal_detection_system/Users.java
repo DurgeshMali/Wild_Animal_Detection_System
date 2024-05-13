@@ -4,7 +4,9 @@ public class Users {
     String name, phoneNo, password;
     String camName, camIP;
 
-    public Users() {
+    public Users(String camName, String camIP) {
+        this.camName = camName;
+        this.camIP = camIP;
     }
 
     public Users(String name, String phoneNo, String password) {
@@ -35,5 +37,21 @@ public class Users {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getCamName() {
+        return camName;
+    }
+
+    public void setCamName(String camName) {
+        this.camName = camName;
+    }
+
+    public String getCamIP() {
+        return camIP;
+    }
+
+    public void setCamIP(String camIP) {
+        this.camIP = camIP;
     }
 }

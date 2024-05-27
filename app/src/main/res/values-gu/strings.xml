@@ -78,4 +78,12 @@
     <string name="resend_otp_again">ફરી મોકલેલ OTP</string>
     <string name="verify_otp">OTP ને ચકાસો</string>
     <string name="edit_profile_1">પ્રોફાઇલમાં ફેરફાર કરો</string>
+    <string name="after_successfully_creating_account_go_to_customize_section">• સફળતાપૂર્વક ખાતું બનાવ્યા પછી કસ્ટમાઇઝ વિભાગમાં જાઓ.</string>
+    <string name="then_add_the_camera_name_and_add_the_camera_s_ip">• ત્યારબાદ કેમેરાનું નામ જણાવો અને કૅમેરાનો આઈપી ઉમેરો.</string>
+    <string name="go_to_live_feed_section_in_home_menu">• હોમ મેનુમાં લાઇવ ફીડ સેક્શનમાં જાઓ.</string>
+    <string name="in_live_feed_section_you_can_watch_live_feed_of_your_camera">• લાઇવ ફીડ સેક્શનમાં તમે તમારા કૅમેરાની લાઇવ ફીડ જોઈ શકો છો.</string>
+    <string name="wait_for_animal_to_appear_on_camera_get_detection_and_get_alert">• પ્રાણી કૅમેરામાં દેખાય તેની રાહ જુઓ, તેની તપાસ કરો અને સતર્ક રહો.</string>
+    <string name="add_camera_information">કૅમેરા જાણકારી ઉમેરો</string>
+    <string name="give_the_camera_name">કૅમેરા નામ આપો</string>
+    <string name="paste_your_camera_link_here">અહીં તમારી કૅમેરા લિંક ઉમેરો</string>
 </resources>

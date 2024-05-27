@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Camera Information"
+            android:text="@string/add_camera_information"
             android:textColor="#0F7015"
             android:gravity="center"
             android:textSize="35sp"
@@ -28,9 +28,10 @@
 
         <EditText
             android:id="@+id/cam_Name"
-            android:hint="Give the Camera Name"
+            android:hint="@string/give_the_camera_name"
+            android:textColorHint="#736E6E"
             android:textColor="@color/black"
-            android:background="@drawable/white_background"
+            android:background="@drawable/edittext_background"
             android:textSize="18sp"
             android:padding="15dp"
             android:layout_margin="20dp"
@@ -39,9 +40,10 @@
 
         <EditText
             android:id="@+id/cam_IP"
-            android:hint="Paste your camera Link here"
+            android:hint="@string/paste_your_camera_link_here"
+            android:textColorHint="#736E6E"
             android:textColor="@color/black"
-            android:background="@drawable/white_background"
+            android:background="@drawable/edittext_background"
             android:padding="15dp"
             android:textSize="18sp"
             android:layout_margin="20dp"

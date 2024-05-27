@@ -78,4 +78,12 @@
     <string name="resend_otp_again">OTP दोबारा भेजें</string>
     <string name="verify_otp">OTP वेरिफाई करें</string>
     <string name="edit_profile_1">प्रोफ़ाइल संपादित करें</string>
+    <string name="after_successfully_creating_account_go_to_customize_section">• सफलतापूर्वक खाता बनाने के बाद अनुकूलित अनुभाग पर जाएं।</string>
+    <string name="then_add_the_camera_name_and_add_the_camera_s_ip">• फिर कैमरे का नाम दें और कैमरे का आईपी जोड़ें।</string>
+    <string name="go_to_live_feed_section_in_home_menu">• होम मेनू में लाइव फीड सेक्शन में जाएं।</string>
+    <string name="in_live_feed_section_you_can_watch_live_feed_of_your_camera">• लाइव फीड सेक्शन में आप अपने कैमरे का लाइव फीड देख सकते हैं।</string>
+    <string name="wait_for_animal_to_appear_on_camera_get_detection_and_get_alert">• कैमरे पर दिखाई देने के लिए पशु की प्रतीक्षा करें, पता लगाने और अलर्ट प्राप्त करें।</string>
+    <string name="add_camera_information">कैमरा जानकारी जोड़ें</string>
+    <string name="give_the_camera_name">कैमरे का नाम दें</string>
+    <string name="paste_your_camera_link_here">अपना कैमरा लिंक यहां जोड़ें</string>
 </resources>

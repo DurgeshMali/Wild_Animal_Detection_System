@@ -77,4 +77,12 @@
     <string name="resend_otp_again">Resend OTP Again</string>
     <string name="verify_otp">Verify OTP</string>
     <string name="edit_profile_1">Edit Profile</string>
+    <string name="after_successfully_creating_account_go_to_customize_section">• After successfully Creating Account Go to Customize section.</string>
+    <string name="then_add_the_camera_name_and_add_the_camera_s_ip">• Then give the Camera Name and Add the Camera\'s IP.</string>
+    <string name="go_to_live_feed_section_in_home_menu">• Go to Live Feed Section in Home Menu.</string>
+    <string name="in_live_feed_section_you_can_watch_live_feed_of_your_camera">• In Live Feed Section you can watch live feed of your Camera.</string>
+    <string name="wait_for_animal_to_appear_on_camera_get_detection_and_get_alert">• Wait for animal to appear on camera, get detection and get Alert.</string>
+    <string name="add_camera_information">Add Camera Information</string>
+    <string name="give_the_camera_name">Give the Camera Name</string>
+    <string name="paste_your_camera_link_here">Add your camera Link here</string>
 </resources>

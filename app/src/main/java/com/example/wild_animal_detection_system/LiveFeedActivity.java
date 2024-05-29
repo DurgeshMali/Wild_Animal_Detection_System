@@ -10,7 +10,7 @@ import com.github.niqdev.mjpeg.MjpegView;
 
 public class LiveFeedActivity extends AppCompatActivity {
 
-    private static final String IPCAM_URL = "http://10.187.206.146:8080/video";
+    private static final String IPCAM_URL = "http://10.144.57.217:8080/video";
     private MjpegView mjpegView;
 
 

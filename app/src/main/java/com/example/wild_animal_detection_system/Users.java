@@ -4,6 +4,10 @@ public class Users {
     String name, phoneNo, password;
     String camName, camIP;
 
+    public Users() {
+
+    }
+
     public Users(String camName, String camIP) {
         this.camName = camName;
         this.camIP = camIP;

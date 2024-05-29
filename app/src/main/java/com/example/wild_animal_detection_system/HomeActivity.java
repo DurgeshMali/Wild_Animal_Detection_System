@@ -64,6 +64,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, CustomizeCameraActivity.class);
+                intent.putExtra("userPhone", phoneUser);
                 startActivity(intent);
             }
         });

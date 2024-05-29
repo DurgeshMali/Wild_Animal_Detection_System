@@ -14,66 +14,84 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class CameraAdapter extends RecyclerView.Adapter<CameraAdapter.CameraViewHolder> {
-    private final Context c;
+    private final Context context;
     private final ArrayList<Users> cameraList;
+    private final DatabaseReference databaseReference;
 
-    public CameraAdapter(Context c, ArrayList<Users> cameraList) {
-        this.c = c;
+    public CameraAdapter(Context context, ArrayList<Users> cameraList, String phoneNo) {
+        this.context = context;
         this.cameraList = cameraList;
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(phoneNo).child("Cameras");
     }
 
     class CameraViewHolder extends RecyclerView.ViewHolder {
         private final TextView name;
-//        private final TextView mbNum;
         private final ImageView mMenus;
 
         CameraViewHolder(View v) {
             super(v);
             name = v.findViewById(R.id.camName);
-//            mbNum = v.findViewById(R.id.mSubTitle);
             mMenus = v.findViewById(R.id.menu);
             mMenus.setOnClickListener(this::popupMenus);
         }
 
         private void popupMenus(View v) {
-            Users position = cameraList.get(getAdapterPosition());
-            PopupMenu popupMenus = new PopupMenu(c, v);
+            int position = getAdapterPosition();
+            Users camera = cameraList.get(position);
+            PopupMenu popupMenus = new PopupMenu(context, v);
             popupMenus.inflate(R.menu.show_menu);
             popupMenus.setOnMenuItemClickListener(item -> {
                 int id = item.getItemId();
 
-                if(id == R.id.editText) {
-                    View dialogView = LayoutInflater.from(c).inflate(R.layout.add_camera, null);
+                if (id == R.id.editText) {
+                    View dialogView = LayoutInflater.from(context).inflate(R.layout.add_camera, null);
                     EditText name = dialogView.findViewById(R.id.cam_Name);
                     EditText number = dialogView.findViewById(R.id.cam_IP);
-                    new AlertDialog.Builder(c)
+                    name.setText(camera.getCamName());
+                    number.setText(camera.getCamIP());
+                    new AlertDialog.Builder(context)
                             .setView(dialogView)
                             .setPositiveButton("Ok", (dialog, which) -> {
-                                position.camName = name.getText().toString();
-                                position.camIP = number.getText().toString();
-                                notifyDataSetChanged();
-                                Toast.makeText(c, "User Information is Edited", Toast.LENGTH_SHORT).show();
+                                camera.setCamName(name.getText().toString());
+                                camera.setCamIP(number.getText().toString());
+
+                                databaseReference.child(String.valueOf(position + 1)).setValue(camera).addOnCompleteListener(task -> {
+                                    if (task.isSuccessful()) {
+                                        notifyDataSetChanged();
+                                        Toast.makeText(context, "Camera Information is Edited", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(context, "Failed to edit camera", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
                                 dialog.dismiss();
                             })
                             .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss())
                             .create()
                             .show();
                     return true;
-                }
-                else if(id == R.id.delete) {
-                    new AlertDialog.Builder(c)
+                } else if (id == R.id.delete) {
+                    new AlertDialog.Builder(context)
                             .setTitle("Delete")
                             .setIcon(R.drawable.baseline_warning_24)
-                            .setMessage("Are you sure delete this Information")
+                            .setMessage("Are you sure you want to delete this information?")
                             .setPositiveButton("Yes", (dialog, which) -> {
-                                cameraList.remove(getAdapterPosition());
-                                notifyDataSetChanged();
-                                Toast.makeText(c, "Deleted this Information", Toast.LENGTH_SHORT).show();
+                                databaseReference.child(String.valueOf(position + 1)).removeValue().addOnCompleteListener(task -> {
+                                    if (task.isSuccessful()) {
+                                        cameraList.remove(position);
+                                        notifyDataSetChanged();
+                                        Toast.makeText(context, "Deleted this Information", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(context, "Failed to delete camera", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
                                 dialog.dismiss();
                             })
                             .setNegativeButton("No", (dialog, which) -> dialog.dismiss())
@@ -100,29 +118,15 @@ public class CameraAdapter extends RecyclerView.Adapter<CameraAdapter.CameraView
     @NonNull
     @Override
     public CameraViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View v = inflater.inflate(R.layout.camera, parent, false);
-        return new CameraViewHolder(v);
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
+        View view = layoutInflater.inflate(R.layout.camera, parent, false);
+        return new CameraViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(CameraViewHolder holder, int position) {
         Users newList = cameraList.get(position);
-        System.out.println(newList.getCamName());
-        holder.name.setText(newList.camName);
-
-//        String nameCAM = newList.camName;
-//        if(nameCAM.length() > 8) {
-//            if(nameCAM.substring(0,9).equals("CamName:")) {
-//                nameCAM = nameCAM.substring(9);
-//                holder.name.setText(nameCAM);
-//            }
-//            else {
-//                holder.name.setText(newList.camName);
-//            }
-//        } else {
-//            holder.name.setText(newList.camName);
-//        }
+        holder.name.setText(newList.getCamName());
     }
 
     @Override
@@ -130,4 +134,3 @@ public class CameraAdapter extends RecyclerView.Adapter<CameraAdapter.CameraView
         return cameraList.size();
     }
 }
-

@@ -71,7 +71,7 @@ public class CustomizeCameraActivity extends AppCompatActivity {
             String camip = camIP.getText().toString();
 
             if (!isValidIPAddress(camip)) {
-                Toast.makeText(this, "Invalid IP Address. Please enter a valid IP address with port (e.g., http://192.168.24.3:8080)", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Invalid IP Address.", Toast.LENGTH_SHORT).show();
                 return;
             }
 

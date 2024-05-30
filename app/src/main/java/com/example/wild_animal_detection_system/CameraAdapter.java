@@ -66,7 +66,7 @@ public class CameraAdapter extends RecyclerView.Adapter<CameraAdapter.CameraView
                                 String newCamIP = number.getText().toString();
 
                                 if (!isValidIPAddress(newCamIP)) {
-                                    Toast.makeText(context, "Invalid IP Address. Please enter a valid IP address with port (e.g., http://192.168.24.3:8080)", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(context, "Invalid IP Address.", Toast.LENGTH_SHORT).show();
                                     return;
                                 }
 

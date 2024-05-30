@@ -85,5 +85,5 @@
     <string name="wait_for_animal_to_appear_on_camera_get_detection_and_get_alert">• कैमरे पर दिखाई देने के लिए पशु की प्रतीक्षा करें, पता लगाने और अलर्ट प्राप्त करें।</string>
     <string name="add_camera_information">कैमरा जानकारी जोड़ें</string>
     <string name="give_the_camera_name">कैमरे का नाम दें</string>
-    <string name="paste_your_camera_link_here">अपना कैमरा लिंक यहां जोड़ें</string>
+    <string name="paste_your_camera_link">अपना कैमरा लिंक यहां जोड़ें</string>
 </resources>

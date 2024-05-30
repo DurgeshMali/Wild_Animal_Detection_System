@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -23,10 +24,10 @@ import java.util.ArrayList;
 
 public class CameraAdapter extends RecyclerView.Adapter<CameraAdapter.CameraViewHolder> {
     private final Context context;
-    private final ArrayList<Users> cameraList;
+    private final ArrayList<Cameras> cameraList;
     private final DatabaseReference databaseReference;
 
-    public CameraAdapter(Context context, ArrayList<Users> cameraList, String phoneNo) {
+    public CameraAdapter(Context context, ArrayList<Cameras> cameraList, String phoneNo) {
         this.context = context;
         this.cameraList = cameraList;
         databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(phoneNo).child("Cameras");
@@ -45,7 +46,7 @@ public class CameraAdapter extends RecyclerView.Adapter<CameraAdapter.CameraView
 
         private void popupMenus(View v) {
             int position = getAdapterPosition();
-            Users camera = cameraList.get(position);
+            Cameras camera = cameraList.get(position);
             PopupMenu popupMenus = new PopupMenu(context, v);
             popupMenus.inflate(R.menu.show_menu);
             popupMenus.setOnMenuItemClickListener(item -> {
@@ -60,10 +61,19 @@ public class CameraAdapter extends RecyclerView.Adapter<CameraAdapter.CameraView
                     new AlertDialog.Builder(context)
                             .setView(dialogView)
                             .setPositiveButton("Ok", (dialog, which) -> {
+
+                                String newCamName = name.getText().toString();
+                                String newCamIP = number.getText().toString();
+
+                                if (!isValidIPAddress(newCamIP)) {
+                                    Toast.makeText(context, "Invalid IP Address. Please enter a valid IP address with port (e.g., http://192.168.24.3:8080)", Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+
                                 camera.setCamName(name.getText().toString());
                                 camera.setCamIP(number.getText().toString());
 
-                                databaseReference.child(String.valueOf(position + 1)).setValue(camera).addOnCompleteListener(task -> {
+                                databaseReference.child(camera.getKey()).setValue(camera).addOnCompleteListener(task -> {
                                     if (task.isSuccessful()) {
                                         notifyDataSetChanged();
                                         Toast.makeText(context, "Camera Information is Edited", Toast.LENGTH_SHORT).show();
@@ -83,10 +93,10 @@ public class CameraAdapter extends RecyclerView.Adapter<CameraAdapter.CameraView
                             .setIcon(R.drawable.baseline_warning_24)
                             .setMessage("Are you sure you want to delete this information?")
                             .setPositiveButton("Yes", (dialog, which) -> {
-                                databaseReference.child(String.valueOf(position + 1)).removeValue().addOnCompleteListener(task -> {
+                                databaseReference.child(camera.getKey()).removeValue().addOnCompleteListener(task -> {
                                     if (task.isSuccessful()) {
-                                        cameraList.remove(position);
-                                        notifyDataSetChanged();
+                                        notifyItemRemoved(position);
+                                        notifyItemRangeChanged(position, cameraList.size());
                                         Toast.makeText(context, "Deleted this Information", Toast.LENGTH_SHORT).show();
                                     } else {
                                         Toast.makeText(context, "Failed to delete camera", Toast.LENGTH_SHORT).show();
@@ -125,12 +135,17 @@ public class CameraAdapter extends RecyclerView.Adapter<CameraAdapter.CameraView
 
     @Override
     public void onBindViewHolder(CameraViewHolder holder, int position) {
-        Users newList = cameraList.get(position);
+        Cameras newList = cameraList.get(position);
         holder.name.setText(newList.getCamName());
     }
 
     @Override
     public int getItemCount() {
         return cameraList.size();
+    }
+
+    public boolean isValidIPAddress(String camip) {
+        String IP_ADDRESS_PATTERN = "^http://((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(:\\d{1,5})$";
+        return camip.matches(IP_ADDRESS_PATTERN);
     }
 }

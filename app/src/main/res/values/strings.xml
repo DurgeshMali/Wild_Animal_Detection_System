@@ -84,5 +84,5 @@
     <string name="wait_for_animal_to_appear_on_camera_get_detection_and_get_alert">• Wait for animal to appear on camera, get detection and get Alert.</string>
     <string name="add_camera_information">Add Camera Information</string>
     <string name="give_the_camera_name">Give the Camera Name</string>
-    <string name="paste_your_camera_link_here">Add your camera Link here</string>
+    <string name="paste_your_camera_link">Add your camera Link here</string>
 </resources>

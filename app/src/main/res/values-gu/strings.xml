@@ -85,5 +85,5 @@
     <string name="wait_for_animal_to_appear_on_camera_get_detection_and_get_alert">• પ્રાણી કૅમેરામાં દેખાય તેની રાહ જુઓ, તેની તપાસ કરો અને સતર્ક રહો.</string>
     <string name="add_camera_information">કૅમેરા જાણકારી ઉમેરો</string>
     <string name="give_the_camera_name">કૅમેરા નામ આપો</string>
-    <string name="paste_your_camera_link_here">અહીં તમારી કૅમેરા લિંક ઉમેરો</string>
+    <string name="paste_your_camera_link">અહીં તમારી કૅમેરા લિંક ઉમેરો</string>
 </resources>

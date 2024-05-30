@@ -40,7 +40,7 @@
 
         <EditText
             android:id="@+id/cam_IP"
-            android:hint="@string/paste_your_camera_link_here"
+            android:hint="@string/paste_your_camera_link"
             android:textColorHint="#736E6E"
             android:textColor="@color/black"
             android:background="@drawable/edittext_background"
